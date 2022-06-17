@@ -25,6 +25,24 @@ const reverse = (str) => {
 // console.log(reverse(i));
 
 //3
+const printDigitValue = (str) => {
+  let newString = "";
+  let length = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (!isNaN(str[i])) {
+      newString += str[i];
+    }
+  }
+  console.log(newString);
+
+  length = newString.length - 1;
+  for (let x = 0; x > newString.length; x++) {
+    if (length >= 1) console.log(parseInt(newString[x]) * 10 ** length);
+    else console.log(1);
+    length--;
+  }
+};
+printDigitValue("9.86-A5.321");
 
 //4
 let a = 3;
@@ -63,13 +81,18 @@ const bilangan = (x) => {
 
 //6
 const highLow = (arr, low, high) => {
-  result = arr.filter((n) => n > low && n < high);
+  result = arr.filter((n) => n < low && n < high);
   return result;
 };
 
 // console.log(highLow([1, 4, 7, 9, 12], 2, 15));
 
 //7
+const totalHighLow = (arr, low, high) => {
+  return highLow(arr, low, high).length;
+};
+
+// console.log(totalHighLow([1, 4, 7, 9, 12], 2, 15));
 
 //8
 const eduwork = (x) => {
@@ -111,3 +134,10 @@ const lowHigh = (arr) => {
 // lowHigh([4, 2, 6, 88, 3, 11]);
 
 //10
+const kabisat = (thn) => {
+  const isKabisat = new Date(thn, 1, 29).getDate() >= 29;
+  if (isKabisat) console.log(thn, "adalah tahun kabisat");
+  else console.log(thn, "bukan tahun kabisat");
+};
+
+// kabisat(2024);
